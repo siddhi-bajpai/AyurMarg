@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AyurMarg</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="header">
+        <div class="logo">
+        <img src="logo.png" alt=" Logo">
+        <span>AYURMARG</span>
+        </div>
+        <ul class="mid">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="../prakriti finder website/index.html">Prakriti</a></li>
+            <li><a href="http://aidoctorayurbot.streamlit.app">AIDoctor</a></li> <!--🙃-->
+            <li><a href="#herb_info">HerbInfo</a></li> 
+        </ul>
+        <div class="options">
+        <a href="whatsapp-link"><img src="whatsapp.png" alt="WhatsApp"></a>
+        <a href="../Profile/index.html"><img src="user.png" alt="Profile"></a>
+        <a href="shopping-cart-link"><img src="cart.png" alt="Cart"></a>
+        </div>
+    </div>
+  </nav>
+  
+  <!-- Sections -->
+
+  <!-- Homepage -->
+ 
+  <section id="homepage" class="homepage-section">
+    <div class="homepage-content">
+      <h1>Pathway Towards Personalized Wellness</h1>
+      <p>Know the root cause of your disease</p>
+      <div class="buttons">
+        <a href="../prakriti finder website/index.html"><button>Know your Prakriti</button></a>
+        <button><a href="http://aidoctorayurbot.streamlit.app">Meet your AI Doctor</a></button>   <!--🙃-->
+      </div>
+    </div>
+  </section>
+  
+
+  
+    <!-- Review section -->
+  
+    <section id="review-section" class="review-section">
+      <h2>What our users say?</h2>
+      <div class="review-slider">
+        <div class="review-card">
+          <img src="user1.webp" alt="User 1" class="user-photo">
+          <h3>John Doe</h3>
+          <p>"I've never felt better about my health. Ayurmarg's personalized plans truly make a difference."</p>
+        </div>
+        <div class="review-card">
+          <img src="user2.webp" alt="User 2" class="user-photo">
+          <h3>Jane Smith</h3>
+          <p>"Amazing experience! The AI Doctor is incredibly accurate and helpful in guiding my health journey."</p>
+        </div>
+        <div class="review-card">
+          <img src="user1.webp" alt="User 1" class="user-photo">
+          <h3>John Doe</h3>
+          <p>"I've never felt better about my health. Ayurmarg's personalized plans truly make a difference."</p>
+        </div>
+        <div class="review-card">
+          <img src="user2.webp" alt="User 2" class="user-photo">
+          <h3>Jane Smith</h3>
+          <p>"Amazing experience! The AI Doctor is incredibly accurate and helpful in guiding my health journey."</p>
+        </div>
+        <!-- Add more review-cards as needed -->
+      </div>
+    </section>
+      
+      
+<!-- Info-img section  -->
+
+<section id="info-img-section" class="info-img-section">
+  <img src="Info-img.png" alt="Info Image" class="info-image">
+  <div class="info-buttons">
+    <a href="../prakriti finder website/index.html" id="prakriti-link"><button>Know your Prakriti</button></a>
+    <a href="#" id="ai-doctor-link"><button>Meet your AI Doctor</button></a>
+  </div>
+</section>
+
+
+  
+
+  <!-- Ayurmarg Journey section  -->
+
+  <section class="journey-section">
+    <h2 class="journey-heading">Ayurmarg Journey</h2>
+    <div class="journey-cards">
+      <div class="journey-card" onclick="openPrakritiTest()">
+        <h2>Step 1</h2>
+        <h4>Take the Prakriti Test.</h4>
+        <p>An online test that assesses your prakriti. (5 mins)</p>
+      </div>
+      <div class="journey-card" onclick="openChatWithDoctor()">
+        <h2>Step 2</h2>
+        <h4>Chat with AI Doctor</h4>
+        <p>Based on your response, AI will recommend a personalized health plan.</p>
+      </div>
+      <div class="journey-card" onclick="startHealthJourney()">
+        <h2>Step 3</h2>
+        <h4>Start Health Journey</h4>
+        <p>You get a diet plan, lifestyle suggestions, and medicine. Also have access to a personalized dashboard and/or doctors.</p>
+      </div>
+    </div>
+  </section>
+  
+
+  
+
+
+  <!-- Search engine section  -->
+
+  <section class="search-engine-section">
+    <div class="search-bar">
+      <input type="text" placeholder="Search..." class="search-input" id="search_input">
+      <button class="search-button" id="Herbsearch">Search</button>
+    </div>
+    <div class="herb-info" id="herb_info">
+      <div class="left-section">
+        <div class="herb-image">
+          <img src="tulsi.webp" alt="Tulsi Image">
+        </div>
+        <h2>Tulsi (Holy Basil)</h2>
+        <div class="general-info">
+          <h3>General Information</h3>
+          <p>Tulsi, also known as Holy Basil, is an aromatic perennial plant belonging to the Lamiaceae family. It's revered in India for its numerous health benefits and spiritual significance. The herb has a strong aroma and is used in traditional medicine and culinary practices.</p>
+        </div>
+      </div>
+      <div class="right-section">
+        <div class="benefits">
+          <h3>Benefits</h3>
+          <p>Tulsi possesses potent antioxidant properties, supports the immune system, and aids in stress reduction. It may also help in managing respiratory disorders and promoting heart health.</p>
+        </div>
+        <div class="applications">
+          <h3>Applications</h3>
+          <p>It is used in various forms, including fresh leaves, dried powder, or as an extract. Tulsi is utilized in teas, supplements, and essential oils. It's commonly incorporated into Ayurvedic and herbal remedies for its therapeutic effects.</p>
+        </div>
+        <div class="precautions">
+          <h3>Precautions</h3>
+          <p>Despite its health benefits, excessive consumption of Tulsi may have adverse effects. Pregnant or breastfeeding women should consult healthcare professionals before using it. Individuals with existing medical conditions should also seek advice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+
+  
+
+<!-- feedback section  -->
+<section class="feedback-section">
+  <h2>Feedback</h2>
+  <form id="feedbackForm" class="feedback-form">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="feedback">Your Feedback:</label>
+      <textarea id="feedback" name="feedback" rows="5" required></textarea>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</section>
+  
+  
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h3>About Us</h3>
+        <p>Team Ayurmarg <br> ---Pioneers of AI powered Ayurveda</p>
+      </div>
+      <div class="footer-section contact">
+        <h3>Contact Information</h3>
+        <p>Email: ayurmarg@gmail.com</p>
+        <p>Phone: +7887433879</p>
+        <p>Address: Akurdi, Pune, India</p>
+      </div>
+      <div class="footer-section links">
+        <h3>Useful Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Testimonials</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Ayurmarg. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <script src="index.js"></script>
+
+<script>
+    // Function to check if the user is logged in
+function isLoggedIn() {
+    const userEmail = localStorage.getItem('userEmail');
+    return userEmail !== null && userEmail !== undefined && userEmail !== '';
+}
+
+// Function to handle the click event on Prakriti and AI Doctor links
+// function handlePrakritiAndAIDoctorClick(event) {
+//     if (!isLoggedIn()) {
+//         event.preventDefault(); // Prevent the default action (opening the link)
+//         alert("Please sign in first."); // Prompt the user to sign in
+//     }
+// }
+
+// Add event listeners to Prakriti and AI Doctor links
+document.addEventListener("DOMContentLoaded", function() {
+    // Get all <a> elements on the page
+    const allLinks = document.querySelectorAll('a');
+
+    // Loop through each link and add the event listener
+    allLinks.forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            // Check if the clicked link is one of the specific links you want to target
+            if (link.href === "../prakriti finder website/index.html" || link.href === "https://ai-ayurdoctor.streamlit.app/") {
+                // Prevent the default action if the user is not logged in
+                if (!isLoggedIn()) {
+                    event.preventDefault();
+                    alert("Please sign in first.");
+                }
+            }
+        });
+    });
+});
+
+
+  </script>
+</body>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getFirestore, collection, getDocs, query, where } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+  import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+
+  const firebaseConfig = {
+    // Your Firebase config
+    apiKey: "AIzaSyAvCBCfAjYeJnkOLoe1eZh_AGKwUheKwjQ",
+    authDomain: "cognizant-authentication.firebaseapp.com",
+    databaseURL: "https://cognizant-authentication-default-rtdb.firebaseio.com",
+    projectId: "cognizant-authentication",
+    storageBucket: "cognizant-authentication.appspot.com",
+    messagingSenderId: "529829094298",
+    appId: "1:529829094298:web:ff4551c4f46aa23a615023"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore();
+
+document.getElementById("Herbsearch").addEventListener("click", async () => {
+  const herbName = document.getElementById("search_input").value.trim();
+  console.log("Searching for herb:", herbName);
+
+  if (!herbName) {
+    alert("Please enter a valid herb name.");
+    return;
+  }
+
+  // Get the document reference for the specified herb
+  const herbDocRef = doc(db, "Herbs", herbName);
+
+  try {
+    // Fetch the document snapshot
+    const herbDocSnapshot = await getDoc(herbDocRef);
+    console.log("Document snapshot:", herbDocSnapshot);
+
+    if (herbDocSnapshot.exists()) {
+      const herbData = herbDocSnapshot.data();
+      console.log("Herb found:", herbData);
+      updateHerbInfo(herbData);
+    } else {
+      console.log("Herb not found");
+      clearHerbInfo();
+      alert("Herb not found. Please try again.");
+    }
+  } catch (error) {
+    console.error("Error getting herb document from Firestore:", error);
+    alert("An error occurred. Please try again later.");
+  }
+
+  });
+
+  function updateHerbInfo(herbData) {
+    // Update UI elements with the retrieved herb information
+    document.querySelector(".herb-image img").src = herbData.ImageURL || "default-image.jpg";
+    document.querySelector(".herb-info p").innerText = herbData.General_Info|| "General information";
+    document.querySelector(".benefits p").innerText = herbData.Benefits || "Benefits information";
+    document.querySelector(".applications p").innerText = herbData.Applications || "Applications information";
+    document.querySelector(".precautions p").innerText = herbData.Precautions || "Precautions information";
+  }
+</script>
+
+
+<script type="module">
+  console.log(11);
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+  const newFirebaseConfig = {
+    // Your Firebase config
+    apiKey: "AIzaSyAvCBCfAjYeJnkOLoe1eZh_AGKwUheKwjQ",
+    authDomain: "cognizant-authentication.firebaseapp.com",
+    databaseURL: "https://cognizant-authentication-default-rtdb.firebaseio.com",
+    projectId: "cognizant-authentication",
+    storageBucket: "cognizant-authentication.appspot.com",
+    messagingSenderId: "529829094298",
+    appId: "1:529829094298:web:ff4551c4f46aa23a615023"
+  };
+
+  // Initialize Firebase
+  const newApp = initializeApp(newFirebaseConfig);
+  const newDb = getFirestore();
+
+  document.getElementById("feedbackForm").addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const newName = document.getElementById("name").value;
+    const newEmail = document.getElementById("email").value;
+    const newFeedback = document.getElementById("feedback").value;
+
+    try {
+      // Add feedback data to the "feedback" collection
+      const newDocRef = await addDoc(collection(newDb, "feedback"), {
+        name: newName,
+        email: newEmail,
+        feedback: newFeedback,
+      });
+
+      console.log("New feedback document written with ID: ", newDocRef.id);
+      alert("New feedback saved!!!");
+
+
+    nameInput.value = "";
+    emailInput.value = "";
+    feedbackInput.value = "";
+    } catch (newError) {
+      console.error("Error adding new feedback document: ", newError);
+      alert("An error occurred. Please try again later.");
+    }
+  });
+</script>
+
+</html>

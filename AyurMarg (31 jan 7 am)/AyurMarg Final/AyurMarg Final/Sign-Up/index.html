@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glassmorphism login Form</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav >
+    <div class="header">
+        <div class="logo">
+        <img src="logo.png" alt=" Logo">
+        <span>AYURMARG</span>
+        </div>
+    </div>
+  </nav>
+
+  <!-- form -->
+  <div class="inFormBackground">
+    <div class="inLoginForm">
+      <form onsubmit="return false">
+        <div class="title">
+          <h3>SignUp</h3>
+        </div>
+        <div class="inputGroup">
+          <label for="">Username</label>
+          <input type="text" placeholder="Enter username" id="username">
+        </div>
+        <div class="inputGroup">
+          <label for="email">Email</label>
+          <input type="email" placeholder="Enter Email" id="email">
+        </div>
+        <div class="inputGroup">
+          <label for="password">Password</label>
+          <input type="password" placeholder="Enter Password" id="password1">
+        </div>
+        <div class="inputGroup">
+          <label for="password">Confirm Password</label>
+          <input type="password" placeholder="Re-enter Password" id="password2">
+        </div>
+        <button class="submitForm" id="SignUp">SignUp</button>
+        <div class="forgotPassword">
+          <a href="../Login/index.html">login</a>
+        </div>
+        <div class="validationMessage" id="validationMessage"></div>
+        <div class="social">
+          <div class="go"><i class="fab fa-google"></i></div>
+          <div class="fb"><i class="fab fa-facebook"></i></div>
+          <div class="tw"><i class="fab fa-twitter"></i></div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h3>About Us</h3>
+        <p>Team Ayurmarg <br> ---Pioneers of AI powered Ayurveda</p>
+      </div>
+      <div class="footer-section contact">
+        <h3>Contact Information</h3>
+        <p>Email: ayurmarg@gmail.com</p>
+        <p>Phone: +7887433879</p>
+        <p>Address: Akurdi, Pune, India</p>
+      </div>
+      <div class="footer-section links">
+        <h3>Useful Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Testimonials</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Ayurmarg. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getDatabase , set , ref} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAvCBCfAjYeJnkOLoe1eZh_AGKwUheKwjQ",
+    authDomain: "cognizant-authentication.firebaseapp.com",
+    databaseURL: "https://cognizant-authentication-default-rtdb.firebaseio.com",
+    projectId: "cognizant-authentication",
+    storageBucket: "cognizant-authentication.appspot.com",
+    messagingSenderId: "529829094298",
+    appId: "1:529829094298:web:ff4551c4f46aa23a615023"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+  const auth = getAuth();
+
+  SignUp.addEventListener('click',(e)=> {
+    console.log("1234");
+    // Get input values
+    const email = document.getElementById("email").value;
+    const username = document.getElementById("username").value;
+    const password1 = document.getElementById("password1").value;
+    const password2 = document.getElementById("password2").value;
+
+    
+    
+
+  createUserWithEmailAndPassword(auth, email, password1)
+  .then((userCredential) => {
+    console.log(222);
+    // Signed in 
+    const user = userCredential.user;
+    // console.log(email);
+    // console.log(username);
+    // ...
+
+   return set(ref(database,'users/'+ username),{
+    username:username,
+    email:email
+   })
+
+   
+  }).then(() => {
+      localStorage.setItem('userEmail', email);
+      localStorage.setItem('username', username);
+      const local_username = localStorage.getItem('username');
+      console.log(username);
+        alert('User created!!');
+        window.location.href = '../Userdetails/index.html';
+      })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+    alert(errorMessage);
+  });
+
+});
+
+</script>
+
+</html>

@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Prakriti Finding</title>
+    <!-- <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .options label {
+            margin-right: 10px;
+        }
+
+        .options label input {
+            margin-right: 5px;
+        }
+    </style> -->
+</head>
+<body>
+
+<nav>
+    <div class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+            <span>AYURMARG</span>
+        </div>
+        <ul class="search-bar">
+            <li><a href="../Homepage/index.html">Home</a></li>
+            <li><a href="../prakriti finder website/index.html">Prakriti</a></li>
+            <li><a href="http://aidoctorayurbot.streamlit.app">AIDoctor</a></li>
+        </ul>
+        <div class="options">
+            <a href="whatsapp-link"><img src="whatsapp.png" alt="WhatsApp"></a>
+            <a href="../Profile/index.html"><img src="user.png" alt="Profile"></a>
+            <a href="shopping-cart-link"><img src="cart.png" alt="Cart"></a>
+        </div>
+    </div>
+</nav>
+
+<div class="headings">
+    <div class="Welcome_add">Welcome</div>
+    <div class="Welcome_add">Take the prakriti test</div>
+</div>   
+
+<div class="container">
+    <div class="content">
+        <form id="prakritiForm">
+            <table>
+                <tbody id="questionsTableBody">
+                    <!-- Questions and options will be generated here -->
+                </tbody>
+            </table>
+        </form>
+        <button type="button" onclick="calculatePrakriti()">Calculate Prakriti</button>
+        <div id="result"></div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h3>About Us</h3>
+            <p>Team Ayurmarg <br> ---Pioneers of AI powered Ayurveda</p>
+        </div>
+        <div class="footer-section contact">
+            <h3>Contact Information</h3>
+            <p>Email: ayurmarg@gmail.com</p>
+            <p>Phone: +7887433879</p>
+            <p>Address: Akurdi, Pune, India</p>
+        </div>
+        <div class="footer-section links">
+            <h3>Useful Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Testimonials</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 Ayurmarg. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    // Define the questions with their respective scores
+    
+    const questions = [
+    // Kapha
+    { text: "Whether your skin remains oily throughout the year?", yesScore: 120, noScore: 0, dosha: "Kapha" },
+    { text: "Are your body-hairs & skin shiny, even when no oil or moisturizer is used?", yesScore: 120, noScore: 0, dosha: "Kapha" },
+    { text: "Are you considered attractive among your friends?", yesScore: 40, noScore: 0, dosha: "Kapha" },
+    { text: "Do even mild or trivial injuries on your body make you upset?", yesScore: 40, noScore: 0, dosha: "Kapha" },
+    { text: "Among your family members, is your complexion considered fairer?", yesScore: 40, noScore: 0, dosha: "Kapha" },
+    { text: "Do you think you have intense sexual desire?", yesScore: 120, noScore: 0, dosha: "Kapha" },
+    { text: "Have you got well-built muscles?", yesScore: 60, noScore: 0, dosha: "Kapha" },
+    { text: "Do you have a well-nourished & normally developed body?", yesScore: 120, noScore: 0, dosha: "Kapha" },
+    { text: "Are you lazy and disinterested in activities like morning walk/ jogging, swimming, or any type of outdoor games?", yesScore: 40, noScore: 0, dosha: "Kapha" },
+    { text: "Are you slow in consuming the food? (Even after all have left the dining hall, you are still consuming the same amount of food).", yesScore: 40, noScore: 0, dosha: "Kapha" },
+    { text: "When you go to morning walk or college or office, do you walk slowly in comparison to others?", yesScore: 40, noScore: 0, dosha: "Kapha" },
+    { text: "If you are assigned any work, do you take some extra time to start it?", yesScore: 40, noScore: 0, dosha: "Kapha" },
+    { text: "Do you get irritated easily? (For example, when you don’t get breakfast on time in your hostel or when the power goes off while watching a cricket match or your favourite movie on television).", yesScore: 0, noScore: 40, dosha: "Kapha" },
+    { text: "Are you late to develop/suffer from symptoms after exposure to common causative factors? (For example, during seasonal changes, when your friends are easily caught up with flu etc., you are still healthy among them).", yesScore: 40, noScore: 0, dosha: "Kapha" },
+    { text: "Does your gait (style of walking) change with respect to speed or manner frequently?", yesScore: 0, noScore: 120, dosha: "Kapha" },
+    { text: "Do you feel hungry more frequently and do you consume more food in comparison to others?", yesScore: 0, noScore: 30, dosha: "Kapha" },
+    { text: "Do you tolerate heat easily?", yesScore: 30, noScore: 0, dosha: "Kapha" },
+    { text: "Do you consume liquids in more quantity and frequency in comparison to others?", yesScore: 0, noScore: 30, dosha: "Kapha" },
+    { text: "Do you perspire less in comparison to others?", yesScore: 30, noScore: 0, dosha: "Kapha" },
+    { text: "Are sounds produced frequently in your joints on movement?", yesScore: 0, noScore: 120, dosha: "Kapha" },
+    { text: "Have you got a good/ attractive complexion?", yesScore: 60, noScore: 0, dosha: "Kapha" },
+    { text: "Have you got a sweet & pleasant voice?", yesScore: 60, noScore: 0, dosha: "Kapha" },
+
+    // Pitta
+    { text: "Are you more comfortable in winter than summer?", yesScore: 17, noScore: 0, dosha: "Pitta" },
+    { text: "Among your family members, is your complexion considered fairer?", yesScore: 17, noScore: 0, dosha: "Pitta" },
+    { text: "Does your temperature of oral cavity remain towards the upper limit of the normal range?", yesScore: 17, noScore: 0, dosha: "Pitta" },
+    { text: "Do you have excessive black moles, freckles, etc., on your skin? Or Have you noticed the new appearance of black moles often on your skin?", yesScore: 17, noScore: 0, dosha: "Pitta" },
+    { text: "Do you feel excessive hunger & thirst in comparison to others?", yesScore: 17, noScore: 0, dosha: "Pitta" },
+    { text: "Have you experienced premature graying, wrinkling of the skin & early baldness?", yesScore: 17, noScore: 0, dosha: "Pitta" },
+    { text: "Do you have soft, scanty, brown hair on your face, body & head?", yesScore: 17, noScore: 0, dosha: "Pitta" },
+    { text: "Do you involve yourself in risky & heroic activities requiring physical strength often?", yesScore: 24, noScore: 0, dosha: "Pitta" },
+    { text: "Do you have the ability to digest large quantities of food easily?", yesScore: 24, noScore: 0, dosha: "Pitta" },
+    { text: "Do you take large quantities of food & drink in comparison to others?", yesScore: 24, noScore: 0, dosha: "Pitta" },
+    { text: "Do you get easily irritated for small/negligible problems in day-to-day life?", yesScore: 24, noScore: 0, dosha: "Pitta" },
+    { text: "Do you consume food more frequently than others? (5-6 times/day)", yesScore: 24, noScore: 0, dosha: "Pitta" },
+    { text: "Do you have soft & loose muscle bulk, especially around the joints?", yesScore: 60, noScore: 0, dosha: "Pitta" },
+    { text: "In comparison to others, do you pass urine & stool in large quantities and do you perspire more?", yesScore: 60, noScore: 0, dosha: "Pitta" },
+    { text: "Do your friends complain of a bad smell being emitted from your body & mouth?", yesScore: 120, noScore: 0, dosha: "Pitta" },
+    { text: "Do you think you have intense sexual desire?", yesScore: 0, noScore: 120, dosha: "Pitta" },
+
+
+    // Vata
+    { text: "Whether your skin remains dry throughout the year in comparison to others?", yesScore: 30, noScore: 0, dosha: "Vata" },
+    { text: "Is your body undernourished/ emaciated?", yesScore: 30, noScore: 0, dosha: "Vata" },
+    { text: "Have you got rough, low, broken, or obstructed voice?", yesScore: 30, noScore: 0, dosha: "Vata" },
+    { text: "Does your sleep last less than 6 hours per day? Or Can your sleep be disturbed easily?", yesScore: 30, noScore: 0, dosha: "Vata" },
+    { text: "Do you change walking speed & style from time to time?", yesScore: 40, noScore: 0, dosha: "Vata" },
+    { text: "Do you keep changing your food habits from time to time?", yesScore: 40, noScore: 0, dosha: "Vata" },
+    { text: "Do you keep changing your walking/jogging habit from time to time?", yesScore: 40, noScore: 0, dosha: "Vata" },
+    { text: "Do you keep your joints, eyes, eyebrows, jaw, lips, tongue, head, shoulder, hands & feet frequently moving?", yesScore: 120, noScore: 0, dosha: "Vata" },
+    { text: "Are you considered talkative among your friends?", yesScore: 60, noScore: 0, dosha: "Vata" },
+    { text: "Do you have prominent veins & tendons all over the body?", yesScore: 60, noScore: 0, dosha: "Vata" },
+    { text: "Do you generally start the work assigned to you immediately?", yesScore: 15, noScore: 0, dosha: "Vata" },
+    { text: "Do you get irritated easily? (E.g., when you do not get breakfast on time in your hostel or when the power goes off while watching a cricket match or your favorite movie over television)", yesScore: 15, noScore: 0, dosha: "Vata" },
+    { text: "Do you get frightened easily?", yesScore: 15, noScore: 0, dosha: "Vata" },
+    { text: "Do you make friends easily & also lose them easily?", yesScore: 15, noScore: 0, dosha: "Vata" },
+    { text: "Do you generally learn things quickly? Or Do you have good grasping power?", yesScore: 15, noScore: 0, dosha: "Vata" },
+    { text: "Is your long-term memory weak? (E.g., you can remember only a few names of your friends at your primary school).", yesScore: 15, noScore: 0, dosha: "Vata" },
+    { text: "Are you more comfortable in summer? Or Do you prefer hot/warm drinks over cold drinks?", yesScore: 15, noScore: 0, dosha: "Vata" },
+    { text: "Do you generally develop symptoms immediately after exposure to common causative factors? (You are easily caught by diseases like flu, allergy during seasonal changes).", yesScore: 15, noScore: 0, dosha: "Vata" },
+    { text: "Do you shiver in winter season more than your friends?", yesScore: 60, noScore: 0, dosha: "Vata" },
+    { text: "Do you often feel stiffness in your body after exercise, traveling?", yesScore: 60, noScore: 0, dosha: "Vata" },
+    { text: "Are your nails, teeth, hands, feet, and hairs on your body and face rough?", yesScore: 120, noScore: 0, dosha: "Vata" },
+    { text: "Do you have cracks on the body especially on the heels?", yesScore: 60, noScore: 0, dosha: "Vata" },
+    { text: "Are some crackling sounds produced in your joints during movements?", yesScore: 60, noScore: 0, dosha: "Vata" },
+
+];
+
+// Function to dynamically generate questions
+function generateQuestions() {
+    const form = document.getElementById('prakritiForm');
+
+    questions.forEach((question, index) => {
+        const questionElement = document.createElement('div');
+        questionElement.innerHTML = `
+            <p>${index + 1}. ${question.text}</p>
+            <label>
+                <input type="radio" name="q${index}" value="yes" data-score="${question.yesScore}" required> Yes
+            </label>
+            <label>
+                <input type="radio" name="q${index}" value="no" data-score="${question.noScore}" required> No
+            </label>
+            <br><br><br><br>
+        `;
+        form.insertBefore(questionElement, form.lastChild);
+    });
+}
+
+
+
+// Function to calculate the individual prakriti percentage
+function calculatePrakriti() {
+    const form = document.getElementById('prakritiForm');
+    const resultDiv = document.getElementById('result');
+
+    userScores = {
+        Kapha: 0,
+        Pitta: 0,
+        Vata: 0
+    };
+
+    questions.forEach((question, index) => {
+        const selectedOption = form.querySelector(`input[name="q${index}"]:checked`);
+        if (selectedOption) {
+            const score = parseInt(selectedOption.getAttribute('data-score'));
+            userScores[question.dosha] += score;
+        }
+    });
+
+    let myObject = {};
+
+    // Calculate percentages and display the result
+    resultDiv.innerHTML = "";
+    Object.keys(userScores).forEach(dosha => {
+        const totalScore = questions.filter(question => question.dosha === dosha)
+            .reduce((total, question) => total + Math.max(question.yesScore, question.noScore), 0);
+        const percentage = (userScores[dosha] / totalScore) * 100;
+
+        resultDiv.innerHTML += `<p>${dosha} Percentage: ${percentage.toFixed(2)}%</p>`;
+        let d=dosha;
+        myObject[dosha] = percentage; // Assign percentage to the correct dosha property
+        console.log(myObject[dosha]);
+    });
+
+    window.push_details(myObject);
+}
+
+// Call the function to generate questions when the page loads
+generateQuestions();
+</script>
+
+<script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore-compat.js"></script>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+  import { getFirestore, doc, getDoc, getDocs, collection } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js";
+
+
+// TODO: Replace the following with your app's Firebase project configuration
+// See: https://support.google.com/firebase/answer/7015592
+const firebaseConfig = {
+    apiKey: "AIzaSyAvCBCfAjYeJnkOLoe1eZh_AGKwUheKwjQ",
+    authDomain: "cognizant-authentication.firebaseapp.com",
+    databaseURL: "https://cognizant-authentication-default-rtdb.firebaseio.com",
+    projectId: "cognizant-authentication",
+    storageBucket: "cognizant-authentication.appspot.com",
+    messagingSenderId: "529829094298",
+    appId: "1:529829094298:web:ff4551c4f46aa23a615023"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+const db = firebase.firestore();
+
+
+function push_details(userScores) {
+    const userEmail = localStorage.getItem('userEmail');
+    const userDocRef = db.collection("user").doc(userEmail);
+
+    userDocRef.get()
+        .then((docSnapshot) => {
+            if (docSnapshot.exists) {
+                // Document exists, update the existing data with new data
+                const existingData = docSnapshot.data();
+                const newData = {
+                    kapha: userScores.Kapha,
+                    pitta: userScores.Pitta,
+                    vata: userScores.Vata
+                };
+                const updatedData = { ...existingData, ...newData };
+                return userDocRef.update(updatedData);
+            } else {
+                // Document doesn't exist, create a new one
+                return userDocRef.set({
+                    kapha: userScores.Kapha,
+                    pitta: userScores.Pitta,
+                    vata: userScores.Vata
+                });
+            }
+        })
+        .then(() => {
+            alert("User details stored!!");
+            console.log("Document successfully updated or created!");
+            window.location.href = '../Profile/index.html';
+        })
+        .catch((error) => {
+            console.error("Error updating or creating document: ", error);
+        });
+}
+
+
+window.push_details = push_details;
+
+   
+</script>
+
+</body>
+</html>

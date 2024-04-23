@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Dashboard</title>  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <div class="actual_body">
+
+    <div class="left-panel">
+
+      <div class="logo">
+        <!-- Logo and Title -->
+        <img src="logo.png" alt="Ayurmarg Logo">
+        <span>Ayurmarg</span>
+      </div>
+  
+      <div class="user-profile">
+  
+          <!-- User Photo -->
+          <div class="user-photo">
+            <!-- Fix the typo here -->
+            <img src="user-1.png" alt="User Photo">
+          </div>
+  
+          <!-- User Info -->
+          <form id="userInfoForm">
+            <div class="user-info">
+              <h2>User Profile</h2>
+              <div class="user_details">
+                <label id="usernameLabel" >Username : </label>
+                <div type="text" name="" id="user_name"></div>
+                <div id="user_nameText"></div>
+              </div>
+              
+              <div class="user_details">
+                <label id="mobileLabel" >Mobile Number : </label>
+                <div type="text" id="user_mobile"></div>
+                <span id="user_mobileText"></span>
+              </div>
+              
+              <div class="user_details">
+                <label id="sexLabel" >Gender : </label>
+                <div type="text" id="user_gender"></div>
+                <span id="user_genderText"></span>
+              </div>
+              
+              <div class="user_details">
+                <label id="ageLabel" >Age : </label>
+                <div type="text" id="user_age"></div>
+                <span id="user_ageText"></span>
+              </div>
+              
+              <div class="user_details">
+                <label id="weightLabel" >Weight : </label>
+                <div type="text" id="user_weight"></div>
+                <span id="user_weightText"></span>
+              </div>
+              
+              <div class="user_details">
+                <label id="bloodGroupLabel" >Blood Group : </label>
+                <div type="text" id="user_bloodgroup"></div>
+                <span id="user_bloodgroupText"></span>
+              </div>
+
+              <div class="user_details">
+                <label id="addressLabel" >Address : </label>
+                <div type="text" id="user_address"></div>
+                <span id="user_addressText"></span>
+              </div>              
+              
+              <div class="buttons">
+                <button type="submit" id="save_button">Save</button>
+                <button><img src="edit.png" alt="" id="edit_button"></button>
+              </div>
+              
+            </div>
+          </form>
+  
+      </div>
+  
+    </div>
+
+    
+    <div class="right-panel">
+      <!-- Content for the right panel -->
+      <div class="navbar">
+          <ul>
+            <li><a href="../Homepage/index.html">Home</a></li>
+            <li><a href="../prakriti finder website/index.html">Prakriti</a></li>
+            <li><a href="http://aidoctorayurbot.streamlit.app">AI Doctor</a></li>                         <!--🙃-->
+            <li class="right-icons">
+              <div class="options">
+                <a href="whatsapp-link"><img src="whatsapp.png" alt="WhatsApp"></a>
+                <a href="../Profile/index.html"><img src="user.png" alt="Profile"></a>
+                <a href="shopping-cart-link"><img src="cart.png" alt="Cart"></a>
+                <div id="profile-navbar"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+  
+  
+        
+        <div class="upper-section">
+              
+              <div class="upper-left">
+                  <!-- Content for upper left section -->
+                  <div class="prakriti-section">
+                      <h2>Prakriti Analysis</h2>
+                      <div class="card">
+                          <!-- Content for the card -->
+                          <div class="doshas">
+                            <label>Kapha : </label>
+                            <p id="Kapha_details"></p>
+                          </div>
+                          <div class="doshas">
+                            <label>Pitta : </label>
+                            <p id="pitta_details"></p>
+                          </div>
+                          <div class="doshas">
+                            <label>Vata : </label>
+                            <p id="vata_details"></p>
+                          </div>
+                      </div>
+                      <div class="link-btn-container">
+                          <div class="link">
+                              <a href="https://ayush.delhi.gov.in/ayush/prakriti">Know more about Prakriti</a>
+                          </div>
+                          <a href="../prakriti finder website/"><button class="find-prakriti-btn">Find Your Prakriti</button></a>
+                      </div>
+                  </div>
+              </div>
+           <!-- upper right section  -->
+           <div class="upper-right">
+            <div class="prescription-section">
+              <h2>My Prescription</h2>
+              <div class="card">
+                <!-- Content for the card -->
+                Card content...
+              </div>
+              <div class="button-group">
+                <button class="view-prescription-btn">View Prescription</button>
+                <button class="my-diet-btn">My Diet</button>
+                <button class="my-lifestyle-btn">My Lifestyle</button>
+              </div>
+            </div>
+          </div>
+          
+          </div>
+  
+  
+          <!-- lower-section  -->
+          <div class="lower-section">
+              <div class="section-1">
+                <div class="content-wrapper">
+                  <h2>My Doctor</h2>
+                  <!-- Doctor's photo, name, expertise -->
+                  <div class="doctor-info">
+                    <!-- <img src="doctor-photo.jpg" alt="Doctor's Photo"> -->
+                    <h3 id="doctorName">Doctor Name</h3>
+                    <p id="doctorExpertise">Expertise: Specialization</p>
+                  </div>
+                  <button class="book-call-btn">Book a Call</button>
+                </div>
+              </div>
+
+              <div class="section-3">
+                <div class="subsection-2">
+                  <div class="content-wrapper">
+                    <h2>My Community</h2>
+                    <button class="join-channel-btn">Join Channel</button>
+                  </div>
+                </div>
+              </div>
+            </div>            
+        </div> 
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section about">
+          <h3>About Us</h3>
+        <p>Team Ayurmarg <br> ---Pioneers of AI powered Ayurveda</p>
+        </div>
+        <div class="footer-section contact">
+          <h3>Contact Information</h3>
+        <p>Email: ayurmarg@gmail.com</p>
+        <p>Phone: +7887433879</p>
+        <p>Address: Akurdi, Pune, India</p>
+        </div>
+        <div class="footer-section links">
+          <h3>Useful Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Testimonials</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 Ayurmarg. All rights reserved.</p>
+      </div>
+    </footer>
+
+    
+
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore-compat.js"></script>
+
+    <script src="index.js"></script>
+    
+    <script type="module">
+    // index.js
+
+              import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+              import { getFirestore, doc, getDoc, getDocs, collection, updateDoc } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js";
+
+
+                document.addEventListener('DOMContentLoaded', function () {
+                  // Initialize Firebase
+                  const firebaseConfig = {
+                    apiKey: "AIzaSyAvCBCfAjYeJnkOLoe1eZh_AGKwUheKwjQ",
+                    authDomain: "cognizant-authentication.firebaseapp.com",
+                    databaseURL: "https://cognizant-authentication-default-rtdb.firebaseio.com",
+                    projectId: "cognizant-authentication",
+                    storageBucket: "cognizant-authentication.appspot.com",
+                    messagingSenderId: "529829094298",
+                    appId: "1:529829094298:web:ff4551c4f46aa23a615023"
+                  };                  
+
+                  initializeApp(firebaseConfig);
+                  const db = getFirestore();
+                  
+
+                  // Retrieve the user's email from local storage
+                  const userEmail = localStorage.getItem('userEmail');
+                  console.log(userEmail);
+
+                  // Reference to the user's document in Firestore
+                  const userDocRef = doc(db, 'user', userEmail);
+                  console.log(userDocRef);
+
+                  // Fetch user data from Firestore
+                getDoc(userDocRef)
+                .then((docSnapshot) => {
+                    if (docSnapshot.exists()) {
+                        const userData = docSnapshot.data();
+
+                        // Update form fields with retrieved data
+                        console.log(userData.username, userData.mobile, userData.gender, userData.age, userData.weight, userData.bloodgroup, userData.address, userData.kapha,userData.vata, userData.pitta);
+
+                        document.getElementById('user_name').innerText = userData.username || '';
+                        document.getElementById('user_mobile').innerText = userData.mobile || '';
+                        document.getElementById('user_gender').innerText = userData.gender || '';
+                        document.getElementById('user_age').innerText = userData.age || '';
+                        document.getElementById('user_weight').innerText = userData.weight || '';
+                        document.getElementById('user_bloodgroup').innerText = userData.bloodgroup || '';
+                        document.getElementById('user_address').innerText = userData.address || '';
+                        document.getElementById('Kapha_details').textContent  = userData.kapha.toFixed(2) || '';
+                        document.getElementById('vata_details').textContent  = userData.vata.toFixed(2) || '';
+                        document.getElementById('pitta_details').textContent  = userData.pitta.toFixed(2) || '';
+                    }  
+                    else {
+                                console.log('No such document!');
+                              }
+                            })
+                            .catch((error) => {
+                              console.error('Error getting user details: ', error);
+                            });
+
+
+                            
+
+                    // Now you can fetch the data from the input fields and update Firestore
+                    // ...
+
+                    // For demonstration purposes, I'm logging the updated data to the console
+                    console.log("Updated Data:", {
+                      username: document.getElementById('user_name').innerText,
+                      mobile: document.getElementById('user_mobile').innerText,
+                      gender: document.getElementById('user_gender').innerText,
+                      age: document.getElementById('user_age').innerText,
+                      weight: document.getElementById('user_weight').innerText,
+                      bloodgroup: document.getElementById('user_bloodgroup').innerText,
+                      address: document.getElementById('user_address').innerText,
+                    });
+
+        
+     
+
+
+                          // Function to save updated user details
+                          // document.getElementById('userInfoForm').addEventListener('submit', function (event) {
+                          //   event.preventDefault();
+
+                          //   // Gather updated user details from form
+                          //   const updatedUserData = {
+                          //     username: document.getElementById('user_name').value,
+                          //     mobile: document.getElementById('user_mobile').value,
+                          //     gender: document.getElementById('user_gender').value,
+                          //     age: document.getElementById('user_age').value,
+                          //     weight: document.getElementById('user_weight').value,
+                          //     bloodgroup: document.getElementById('user_bloodgroup').value,
+                          //     address: document.getElementById('user_address').value,
+                          //   };
+
+                          //   // Update user details in Firestore
+                          //   userDocRef.update(updatedUserData)
+                          //     .then(() => {
+                          //       console.log('User details updated successfully');
+                          //     })
+                          //     .catch((error) => {
+                          //       console.error('Error updating user details: ', error);
+                          //     });
+                          // });
+                          
+                          });
+
+                          function convertToInputFields() {
+                                    const form = document.getElementById('userInfoForm');
+                                    const fields = form.querySelectorAll('.user_details');
+
+                                    fields.forEach((field) => {
+                                      const label = field.querySelector('label');
+                                      const dataDiv = field.querySelector('div');
+
+                                      if (label && dataDiv) {
+                                        const input = document.createElement('input');
+                                        input.type = 'text';
+                                        input.value = dataDiv.innerText.trim();
+                                        field.replaceChild(input, dataDiv);
+                                        field.insertBefore(label, input);
+                                      }
+                                    });
+                            }
+
+                            save_button.addEventListener('click', (e) => {
+                                    event.preventDefault();
+                                    console.log(1212);
+                                    const form = document.getElementById('userInfoForm');
+                                    const inputs = form.querySelectorAll('.user_details input');
+                                    const updatedUserData = {};
+                                    console.log(inputs)
+
+                                    inputs.forEach((input) => {
+                                      const label = input.previousElementSibling;
+                                      const fieldName = label.id.replace('Label', '').toLowerCase();
+                                      updatedUserData[fieldName] = input.value;
+                                    });
+
+                                    updateDoc(userDocRef, updatedUserData)
+                                      .then(() => {
+                                        console.log('User details updated successfully');
+                                      })
+                                      .catch((error) => {
+                                        console.error('Error updating user details: ', error);
+                                      });
+
+                                    // Convert back to text after saving
+                                    populateUserData(updatedUserData);
+                            });
+
+                            edit_button.addEventListener('click', (e) => {
+                              e.preventDefault(); 
+
+                                    convertToInputFields();
+                                    console.log(1212);
+                                    const saveButton = form.querySelector('button[type="submit"]');
+      
+                                if (saveButton) {
+                                  editButton.style.display = 'none'; // Hide edit button
+                                  saveButton.style.display = 'block'; // Show save button
+                                }
+                              });                          
+    </script>
+
+  </body>
+</html>

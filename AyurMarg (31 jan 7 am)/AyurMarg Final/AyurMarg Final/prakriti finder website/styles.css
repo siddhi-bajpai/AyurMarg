@@ -1,0 +1,331 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(193, 176, 176, 0.7); /* Adjust the alpha channel value for transparency */
+    /* background-image: url('OIG.jpg'); */
+    background-size: cover;
+    background-position: center;
+}
+
+
+.container {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.content {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 50px auto;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    color: #3498db;
+}
+
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #03150a;
+}
+
+ /* Add your styles for the navigation bar here */
+ body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.Welcome_add{
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+    background-color: rgba(244, 244, 244, 0.2);
+    background-color: hsl(150, 53%, 38%);
+    color: white;   
+    font-weight: bold; 
+}
+
+/* Add the following styles to your existing CSS */
+#prakritiForm p {
+    font-size: 16px; /* Adjust the font size as needed */
+    font-weight: bold; /* Make the text bold */
+}
+
+#prakritiForm label {
+    font-size: 14px; /* Adjust the font size for the radio button labels as needed */
+}
+
+#result p {
+    font-size: 18px; /* Adjust the font size for the result as needed */
+    font-weight: bold; /* Make the result text bold */
+}
+
+nav {
+    /* background-color: creamwhite; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; */
+
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    background-color: rgb(243, 242, 239);
+    color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+
+nav .header{
+    display: flex;
+  }
+  
+ nav .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  nav .logo img {
+    width: 50px; /* Adjust size */
+    height: auto;
+    margin-right: 10px;
+  }
+  
+ nav .logo span {
+    font-weight: bold; /* Adjust as needed */
+  }
+  
+ nav .search-bar {
+    display: flex;
+    align-items: center;
+    margin: 70%;
+    text-decoration: none;
+  }
+
+  nav .pages_names{
+    margin: 10px;
+    width: 60px;
+  }
+
+ nav .options {
+    display: flex;
+    align-items: center;
+    margin-right: 40%;
+    margin-left: 0%;
+  }
+  
+ nav .options a {
+    padding: 8px;
+  }
+  
+ nav .options img {
+    width: 30px; /* Adjust size */
+    height: auto;
+  }
+  
+.headings{
+    margin-top: 70px;
+}
+
+.search-bar li{
+    list-style: none;
+    text-align: center;
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 17px;
+}
+
+.search-bar a{
+    text-decoration: none;
+    color: #333;
+    padding : 10px;
+}
+
+.search-bar a:hover{
+    background-color: #0a99ed;
+    color: #fff8f8;
+}
+
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0;
+    margin-top: 100px;
+    /* bottom: 0; */
+    width: 100%;
+    /* margin-bottom: 0px; */
+    
+    }
+    
+    .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    }
+    
+    .footer-section {
+    flex: 1;
+    margin-bottom: 20px;
+    }
+    
+    .footer-section h3 {
+    margin-bottom: 10px;
+    }
+    
+    .footer-section ul {
+    list-style: none;
+    padding: 0;
+    }
+    
+    .footer-section ul li {
+    margin-bottom: 8px;
+    }
+    
+    .footer-section a {
+    color: #fff;
+    }
+    
+    .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    width: 100%;
+    }
+    
+    .contact{
+    margin-left: 100px;
+    }
+    
+    .about {
+    margin-left: 100px;
+    }
+    .content {
+        margin: 0 auto;
+        max-width: 600px;
+    }
+    
+    #prakritiForm {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .question {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    
+    .question-text {
+        flex: 1;
+    }
+    
+    .option {
+        margin-left: 20px;
+    }
+    
+    .option input[type="radio"] {
+        display: none;
+    }
+    
+    .option .custom-radio {
+        width: 20px;
+        height: 20px;
+        border: 1px solid #000;
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+    
+    .option input[type="radio"]:checked + .custom-radio::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 10px;
+        background-color: #000;
+        border-radius: 50%;
+        display: block;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .question {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    
+        .option {
+            margin-left: 0;
+            margin-top: 5px;
+        }
+    }
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .options label {
+        margin-right: 10px;
+    }
+
+    .options label input {
+        margin-right: 5px;
+    }
